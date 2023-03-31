@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../../assets/logo.svg'
 import { BsHandbag, BsSearchHeart, BsXLg, BsList } from 'react-icons/bs'
 import './Header.css'
 import { Link } from 'react-router-dom'
 const Header = () => {
+	const [isActive, setIsActive] = useState(false)
 	return (
 		<header>
 			<div className='container'>
@@ -12,28 +13,32 @@ const Header = () => {
 						<img src={logo} alt='' />
 					</div>
 					<div className='menu-cross'>
-						<div className='icon icon-menu'>
-							<BsList />
-						</div>
-						<div className='icon icon-cross'>
-							<BsXLg />
-						</div>
+						{!isActive && (
+							<div className='icon icon-menu' onClick={() => setIsActive(!isActive)}>
+								<BsList />
+							</div>
+						)}
+						{isActive && (
+							<div className='icon icon-cross' onClick={() => setIsActive(!isActive)}>
+								<BsXLg />
+							</div>
+						)}
 					</div>
-					<div className='header-links'>
+					<div className={`header-links ${isActive ? 'active' : ''}`}>
 						<ul>
-							<li>
+							<li onClick={() => setIsActive(!isActive)}>
 								<Link to='/'>Home</Link>
 							</li>
-							<li>
+							<li onClick={() => setIsActive(!isActive)}>
 								<Link to='/about'>About</Link>
 							</li>
-							<li>
+							<li onClick={() => setIsActive(!isActive)}>
 								<Link to='/services'>Services</Link>
 							</li>
-							<li>
+							<li onClick={() => setIsActive(!isActive)}>
 								<Link to='/blog'>Blog</Link>
 							</li>
-							<li>
+							<li onClick={() => setIsActive(!isActive)}>
 								<Link to='/contact'>Contact</Link>
 							</li>
 						</ul>
@@ -42,7 +47,8 @@ const Header = () => {
 						<div className='icon'>
 							<BsHandbag />
 						</div>
-						<div className='icon'>
+						<div className='icon search'>
+							<input type='text' placeholder='Search....' role='search' />
 							<BsSearchHeart />
 						</div>
 						<button>Appointment</button>

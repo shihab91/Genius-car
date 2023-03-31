@@ -10,7 +10,7 @@ const Footer = () => {
 				<div className='footer-container'>
 					<div className='info'>
 						<img src={logo} alt='' />
-						<p>Edwin Diaz is a software and web technologies engineer, a life coach trainer who is also a serial .</p>
+						<p>Edwin Diaz is a software and web technologies engineer, a life coach trainer who is also a serial.</p>
 						<div className='social-icons'>
 							<div className='icon'>
 								<AiOutlineGoogle />

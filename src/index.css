@@ -14,7 +14,7 @@
 /* media queries for container styles */
 @media screen and (max-width: 600px) {
 	.container {
-		width: 100%;
+		width: 95%;
 		max-width: none;
 	}
 }
@@ -24,14 +24,7 @@ body {
 	min-width: 320px;
 	min-height: 100vh;
 }
-a {
-	font-weight: 500;
-	color: #646cff;
-	text-decoration: none;
-}
-a:hover {
-	color: #535bf2;
-}
+
 
 button {
 	border-radius: 5px;
