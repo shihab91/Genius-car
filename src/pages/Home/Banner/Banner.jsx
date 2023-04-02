@@ -3,6 +3,12 @@ import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai'
 import './Banner.css'
+import img1 from '../../../assets/images/banner/1.jpg'
+import img2 from '../../../assets/images/banner/2.jpg'
+import img3 from '../../../assets/images/banner/3.jpg'
+import img4 from '../../../assets/images/banner/4.jpg'
+import img5 from '../../../assets/images/banner/5.jpg'
+import img6 from '../../../assets/images/banner/6.jpg'
 const Banner = () => {
 	const [currentSlide, setCurrentSlide] = useState(0)
 	const [sliderRef, instanceRef] = useKeenSlider({
@@ -27,12 +33,12 @@ const Banner = () => {
 				</div>
 			</div>
 			<div ref={sliderRef} className='keen-slider'>
-				<div className='keen-slider__slide slide'>1</div>
-				<div className='keen-slider__slide slide'>2</div>
-				<div className='keen-slider__slide slide'>3</div>
-				<div className='keen-slider__slide slide'>4</div>
-				<div className='keen-slider__slide slide'>5</div>
-				<div className='keen-slider__slide slide'>6</div>
+				<div className='keen-slider__slide slide'><img src={img1} alt="" /></div>
+				<div className='keen-slider__slide slide'><img src={img2} alt="" /></div>
+				<div className='keen-slider__slide slide'><img src={img3} alt="" /></div>
+				<div className='keen-slider__slide slide'><img src={img4} alt="" /></div>
+				<div className='keen-slider__slide slide'><img src={img5} alt="" /></div>
+				<div className='keen-slider__slide slide'><img src={img6} alt="" /></div>
 			</div>
 			<div className='arrows'>
 				<Arrow left onClick={e => e.stopPropagation() || instanceRef.current?.prev()} disabled={currentSlide === 0} />
