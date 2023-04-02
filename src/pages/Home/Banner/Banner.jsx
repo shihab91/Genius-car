@@ -18,6 +18,7 @@ const Banner = () => {
 			setCurrentSlide(slider.track.details.rel)
 		},
 	})
+
 	return (
 		<div className='slider-wrapper'>
 			<div className='slider-info'>
@@ -33,12 +34,24 @@ const Banner = () => {
 				</div>
 			</div>
 			<div ref={sliderRef} className='keen-slider'>
-				<div className='keen-slider__slide slide'><img src={img1} alt="" /></div>
-				<div className='keen-slider__slide slide'><img src={img2} alt="" /></div>
-				<div className='keen-slider__slide slide'><img src={img3} alt="" /></div>
-				<div className='keen-slider__slide slide'><img src={img4} alt="" /></div>
-				<div className='keen-slider__slide slide'><img src={img5} alt="" /></div>
-				<div className='keen-slider__slide slide'><img src={img6} alt="" /></div>
+				<div className='keen-slider__slide slide'>
+					<img src={img1} alt='' />
+				</div>
+				<div className='keen-slider__slide slide'>
+					<img src={img2} alt='' />
+				</div>
+				<div className='keen-slider__slide slide'>
+					<img src={img3} alt='' />
+				</div>
+				<div className='keen-slider__slide slide'>
+					<img src={img4} alt='' />
+				</div>
+				<div className='keen-slider__slide slide'>
+					<img src={img5} alt='' />
+				</div>
+				<div className='keen-slider__slide slide'>
+					<img src={img6} alt='' />
+				</div>
 			</div>
 			<div className='arrows'>
 				<Arrow left onClick={e => e.stopPropagation() || instanceRef.current?.prev()} disabled={currentSlide === 0} />
