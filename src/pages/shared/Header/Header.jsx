@@ -42,6 +42,9 @@ const Header = () => {
 							<li onClick={() => setIsActive(!isActive)}>
 								<Link to='/contact'>Contact</Link>
 							</li>
+							<li onClick={() => setIsActive(!isActive)}>
+								<Link to='/login'>Login</Link>
+							</li>
 						</ul>
 					</div>
 					<div className='handbag-search-appointment'>
