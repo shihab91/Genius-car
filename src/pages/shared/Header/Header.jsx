@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import logo from '../../../assets/logo.svg'
 import { BsHandbag, BsSearchHeart, BsXLg, BsList } from 'react-icons/bs'
 import './Header.css'
 import { Link } from 'react-router-dom'
 const Header = () => {
 	const [isActive, setIsActive] = useState(false)
+	const inputRef = useRef(null)
 	return (
 		<header>
 			<div className='container'>
@@ -48,8 +49,8 @@ const Header = () => {
 							<BsHandbag />
 						</div>
 						<div className='icon search'>
-							<input type='text' placeholder='Search....' role='search' />
-							<BsSearchHeart />
+							<input type='text' placeholder='Search....' role='search' ref={inputRef} />
+							<BsSearchHeart onClick={() => inputRef.current.focus()} />
 						</div>
 						<button>Appointment</button>
 					</div>
