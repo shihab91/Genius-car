@@ -19,36 +19,51 @@
 	}
 }
 
-
 body {
 	min-width: 320px;
 	min-height: 100vh;
 }
 
-
 button {
 	border-radius: 5px;
-	border: 1px solid #FF3811;
+	border: 1px solid transparent;
 	padding: 15px 28px;
 	font-size: 18px;
 	font-weight: 600;
 	line-height: 22px;
 	cursor: pointer;
-	color:#FF3811;
-	background-color:transparent;
-	transition: background-color 0.3s ease;
+	background-color: inherit;
+	transition:all 0.3s ease;
 }
-button:hover,
-button:focus,
-button:active {
-	outline-color: transparent;
-	background-color: #FF3811;
+.btn-outline-orange {
+	color: #ff3811;
+	border-color: #ff3811;
+}
+.btn-fill-orange{
+	background-color: #ff3811;
 	color: white;
 }
+.btn-outline-white {
+	color: #FFFFFF;
+	border-color: #FFFFFF;
+}
+.btn-outline-orange:hover,
+.btn-outline-orange:focus,
+.btn-outline-orange:active {
+	outline-color: transparent;
+	background-color: #ff3811;
+	color: white;
+}
+.btn-outline-white:hover,
+.btn-outline-white:focus,
+.btn-outline-white:active{
+	border-color: #ff3811;
+	color: #ff3811;
+}
 
-@media only screen and (max-width:1024px){
-button{
-	padding: 7px 14px;
-	font-size: 16px;
-}	
+@media only screen and (max-width: 1024px) {
+	button {
+		padding: 7px 14px;
+		font-size: 16px;
+	}
 }

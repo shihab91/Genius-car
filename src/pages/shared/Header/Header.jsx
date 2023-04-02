@@ -52,7 +52,7 @@ const Header = () => {
 							<input type='text' placeholder='Search....' role='search' ref={inputRef} />
 							<BsSearchHeart onClick={() => inputRef.current.focus()} />
 						</div>
-						<button>Appointment</button>
+						<button className='btn-outline-orange'>Appointment</button>
 					</div>
 				</div>
 			</div>

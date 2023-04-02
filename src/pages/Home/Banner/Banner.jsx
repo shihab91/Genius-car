@@ -14,6 +14,18 @@ const Banner = () => {
 	})
 	return (
 		<div className='slider-wrapper'>
+			<div className='slider-info'>
+				<h1>
+					Affordable <br />
+					Price For Car <br />
+					Servicing{' '}
+				</h1>
+				<p>There are many variations of passages of available, but the majority have suffered alteration in some form</p>
+				<div className='slider-btns'>
+					<button className='btn-fill-orange'>Discover More</button>
+					<button className='btn-outline-white'>Latest Project</button>
+				</div>
+			</div>
 			<div ref={sliderRef} className='keen-slider'>
 				<div className='keen-slider__slide slide'>1</div>
 				<div className='keen-slider__slide slide'>2</div>
