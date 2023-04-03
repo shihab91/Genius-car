@@ -20,43 +20,45 @@ const Banner = () => {
 	})
 
 	return (
-		<div className='slider-wrapper'>
-			<div className='slider-info'>
-				<h1>
-					Affordable <br />
-					Price For Car <br />
-					Servicing{' '}
-				</h1>
-				<p>There are many variations of passages of available, but the majority have suffered alteration in some form</p>
-				<div className='slider-btns'>
-					<button className='btn-fill-orange'>Discover More</button>
-					<button className='btn-outline-white'>Latest Project</button>
+		<div className='container'>
+			<div className='slider-wrapper'>
+				<div className='slider-info'>
+					<h1>
+						Affordable <br />
+						Price For Car <br />
+						Servicing{' '}
+					</h1>
+					<p>There are many variations of passages of available, but the majority have suffered alteration in some form</p>
+					<div className='slider-btns'>
+						<button className='btn-fill-orange'>Discover More</button>
+						<button className='btn-outline-white'>Latest Project</button>
+					</div>
 				</div>
-			</div>
-			<div ref={sliderRef} className='keen-slider'>
-				<div className='keen-slider__slide slide'>
-					<img src={img1} alt='' />
+				<div ref={sliderRef} className='keen-slider'>
+					<div className='keen-slider__slide slide'>
+						<img src={img1} alt='' />
+					</div>
+					<div className='keen-slider__slide slide'>
+						<img src={img2} alt='' />
+					</div>
+					<div className='keen-slider__slide slide'>
+						<img src={img3} alt='' />
+					</div>
+					<div className='keen-slider__slide slide'>
+						<img src={img4} alt='' />
+					</div>
+					<div className='keen-slider__slide slide'>
+						<img src={img5} alt='' />
+					</div>
+					<div className='keen-slider__slide slide'>
+						<img src={img6} alt='' />
+					</div>
 				</div>
-				<div className='keen-slider__slide slide'>
-					<img src={img2} alt='' />
-				</div>
-				<div className='keen-slider__slide slide'>
-					<img src={img3} alt='' />
-				</div>
-				<div className='keen-slider__slide slide'>
-					<img src={img4} alt='' />
-				</div>
-				<div className='keen-slider__slide slide'>
-					<img src={img5} alt='' />
-				</div>
-				<div className='keen-slider__slide slide'>
-					<img src={img6} alt='' />
-				</div>
-			</div>
-			<div className='arrows'>
-				<Arrow left onClick={e => e.stopPropagation() || instanceRef.current?.prev()} disabled={currentSlide === 0} />
+				<div className='arrows'>
+					<Arrow left onClick={e => e.stopPropagation() || instanceRef.current?.prev()} disabled={currentSlide === 0} />
 
-				<Arrow onClick={e => e.stopPropagation() || instanceRef.current?.next()} disabled={currentSlide === instanceRef?.current?.track?.details?.slides?.length - 1} />
+					<Arrow onClick={e => e.stopPropagation() || instanceRef.current?.next()} disabled={currentSlide === instanceRef?.current?.track?.details?.slides?.length - 1} />
+				</div>
 			</div>
 		</div>
 	)
