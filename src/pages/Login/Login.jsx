@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import img from '../../assets/images/login/login.svg'
 import './Login.css'
 import facebook from '../../assets/icons/facebook.png'
 import linkedIn from '../../assets/icons/linkedin.png'
 import google from '../../assets/icons/google.png'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider'
 const Login = () => {
+	const { user } = useContext(AuthContext)
+	console.log(user)
 	const handleLogin = e => {
 		e.preventDefault()
 	}
