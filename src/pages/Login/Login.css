@@ -1,7 +1,7 @@
-.login-wrapper {
-	margin: 100px 0;
+.auth-wrapper {
+	margin: 50px 0;
 }
-.login-container {
+.auth-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -55,7 +55,7 @@
 .input-group input::placeholder {
 	color: #a2a2a2;
 }
-.sign-in-with-others p {
+.others-auth p {
 	text-align: center;
 	margin-top: 30px;
 }
@@ -82,7 +82,7 @@
 	height: 31px;
 	transition: all 0.2s ease;
 }
-.sign-in-with-others p {
+.others-auth p {
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 22px;
@@ -90,7 +90,7 @@
 	color: #737373;
 }
 
-.sign-in-with-others p a{
+.others-auth p a{
    color: #ff3811;
    text-decoration: none;
    font-weight: 600;

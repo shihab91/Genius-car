@@ -1,12 +1,11 @@
 import React from 'react'
 import img from '../../assets/images/login/login.svg'
-import './Login.css'
 import facebook from '../../assets/icons/facebook.png'
 import linkedIn from '../../assets/icons/linkedin.png'
 import google from '../../assets/icons/google.png'
 import { Link } from 'react-router-dom'
-const Login = () => {
-	const handleLogin = e => {
+const SignUp = () => {
+	const handleSignUp = e => {
 		e.preventDefault()
 	}
 	return (
@@ -17,8 +16,12 @@ const Login = () => {
 						<img src={img} alt='' />
 					</div>
 					<div className='form-container'>
-						<h1>Login</h1>
-						<form onSubmit={handleLogin}>
+						<h1>Sign Up</h1>
+						<form onSubmit={handleSignUp}>
+							<div className='input-group'>
+								<label htmlFor='name'>Name</label>
+								<input type='text' name='name' placeholder='Your Name' required />
+							</div>
 							<div className='input-group'>
 								<label htmlFor='email'>Email</label>
 								<input type='email' name='email' placeholder='Your Email' required />
@@ -28,11 +31,11 @@ const Login = () => {
 								<input type='password' name='password' placeholder='Your Password' required />
 							</div>
 							<button className='btn-fill-orange' style={{ width: '100%' }} type='submit'>
-								Sign In
+								Sign Up
 							</button>
 						</form>
 						<div className='others-auth'>
-							<p>Or Sign in with</p>
+							<p>Or Sign Up with</p>
 							<div className='icons'>
 								<div className='icon'>
 									<img src={facebook} alt='' />
@@ -45,7 +48,7 @@ const Login = () => {
 								</div>
 							</div>
 							<p>
-								New to site? <Link to='/signup'>Sign Up</Link>
+								Already have an account? <Link to='/login'>Login</Link>
 							</p>
 						</div>
 					</div>
@@ -55,4 +58,4 @@ const Login = () => {
 	)
 }
 
-export default Login
+export default SignUp
