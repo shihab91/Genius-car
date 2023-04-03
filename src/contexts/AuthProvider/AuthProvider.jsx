@@ -7,13 +7,10 @@ const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState({})
 	const [loading, setLoading] = useState(true)
 	const createUser = (email, password) => {
-		createUserWithEmailAndPassword(auth, email, password)
-			.then(result => console.log(result.user))
-			.catch(err => console.log(err.message))
+		return createUserWithEmailAndPassword(auth, email, password)
 	}
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, currentUser => {
-			console.log(currentUser)
 			setUser(currentUser)
 		})
 		return unsubscribe
