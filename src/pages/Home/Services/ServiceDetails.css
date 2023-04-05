@@ -192,3 +192,47 @@
 .other-services .services .service:hover svg {
 	color: white;
 }
+.download {
+	background: #151515;
+	border-radius: 10px;
+	color: white;
+	padding: 40px;
+}
+.download h2 {
+	font-weight: 700;
+	font-size: 25px;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+.download-items {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.download-items .item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.download-items .item .pdf-info {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.download-items .item .pdf-info svg:nth-of-type(1) {
+	width: 30px;
+	height: 30px;
+}
+.download-items .item > .right-arrow{
+	padding: 16px;
+	background: #ff3811;
+	border-radius: 5px;	
+	width: 56px;
+	height: 56px;
+	cursor: pointer;
+}
+.download-items .item > .right-arrow> svg {
+	width: 24px;
+	height: 24px;
+	
+}

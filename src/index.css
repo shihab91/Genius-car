@@ -33,19 +33,19 @@ button {
 	line-height: 22px;
 	cursor: pointer;
 	background-color: inherit;
-	transition:all 0.3s ease;
+	transition: all 0.3s ease;
 }
 .btn-outline-orange {
 	color: #ff3811;
 	border-color: #ff3811;
 }
-.btn-fill-orange{
+.btn-fill-orange {
 	background-color: #ff3811;
 	color: white;
 }
 .btn-outline-white {
-	color: #FFFFFF;
-	border-color: #FFFFFF;
+	color: #ffffff;
+	border-color: #ffffff;
 }
 .btn-outline-orange:hover,
 .btn-outline-orange:focus,
@@ -56,7 +56,7 @@ button {
 }
 .btn-outline-white:hover,
 .btn-outline-white:focus,
-.btn-outline-white:active{
+.btn-outline-white:active {
 	border-color: #ff3811;
 	color: #ff3811;
 }

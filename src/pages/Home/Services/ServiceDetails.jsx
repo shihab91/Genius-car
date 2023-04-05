@@ -1,12 +1,16 @@
 import React from 'react'
 import { useLoaderData, useLocation } from 'react-router-dom'
 import './ServiceDetails.css'
-import { AiOutlineArrowRight } from 'react-icons/ai'
+import { AiOutlineArrowRight, AiOutlineFilePdf } from 'react-icons/ai'
 import ScrollToTop from '../../shared/ScrollToTop/ScrollToTop'
+import useUserNavigate from '../../../hooks/useUserNavigate'
+import useServices from '../../../hooks/useServices'
 const ServiceDetails = () => {
 	const { img, title, description, facility } = useLoaderData()
 	const location = useLocation()
 	const otherServices = location.state?.titles
+	const services = useServices()
+	const handleNavigate = useUserNavigate(services)
 	const steps = [
 		{
 			id: 1,
@@ -24,7 +28,10 @@ const ServiceDetails = () => {
 			step: 'Confirm your booking',
 		},
 	]
-
+	const downloadItems = [
+		{ id: 1, title: 'Our Brochure' },
+		{ id: 2, title: 'Company Details' },
+	]
 	return (
 		<ScrollToTop>
 			<div className='service-details-wrapper'>
@@ -82,6 +89,25 @@ const ServiceDetails = () => {
 											}}>
 											<p>{service.title}</p>
 											<AiOutlineArrowRight />
+										</div>
+									))}
+								</div>
+							</div>
+							<div className='download'>
+								<h2>Download</h2>
+								<div className='download-items'>
+									{downloadItems.map(item => (
+										<div className='item'>
+											<div className='pdf-info'>
+												<AiOutlineFilePdf />
+												<div>
+													<h3>{item.title}</h3>
+													<p>Download</p>
+												</div>
+											</div>
+											<div className='right-arrow'>
+												<AiOutlineArrowRight />
+											</div>
 										</div>
 									))}
 								</div>

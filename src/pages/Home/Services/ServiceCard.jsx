@@ -6,17 +6,6 @@ import useUserNavigate from '../../../hooks/useUserNavigate'
 const ServiceCard = ({ service, services }) => {
 	const navigate = useNavigate()
 	const { title, price, img, _id } = service
-	// const handleNavigate = id => {
-	// 	const titles = services
-	// 		.filter(service => service._id !== id)
-	// 		.map(item => {
-	// 			return {
-	// 				id: item._id,
-	// 				title: item.title,
-	// 			}
-	// 		})
-	// 	navigate(`/services/${id}`, { state: { titles } })
-	// }
 	const handleNavigate = useUserNavigate(services)
 	return (
 		<div className='service-card' onClick={() => handleNavigate(_id)}>
