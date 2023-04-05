@@ -7,10 +7,18 @@ import google from '../../assets/icons/google.png'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider'
 const Login = () => {
-	const { user } = useContext(AuthContext)
-	console.log(user)
+	const { user, signIn } = useContext(AuthContext)
 	const handleLogin = e => {
 		e.preventDefault()
+		const form = e.target
+		const email = form.email.value
+		const password = form.password.value
+		signIn(email, password)
+			.then(result => {
+				console.log(result.user)
+				form.reset()
+			})
+			.catch(err => console.log(err.message))
 	}
 	return (
 		<div className='auth-wrapper'>

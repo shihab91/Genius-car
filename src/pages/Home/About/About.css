@@ -45,7 +45,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-.about-info h1{
-   width: 90%;
-}
+	.about-info h1 {
+		width: 90%;
+	}
 }

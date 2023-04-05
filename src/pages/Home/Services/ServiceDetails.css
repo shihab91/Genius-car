@@ -1,0 +1,63 @@
+.service-details-wrapper {
+	margin-top: 100px ;
+}
+.service-details-banner {
+	height: 300px;
+	border-radius: 10px;
+	background: linear-gradient(90deg, #151515 0%, rgba(21, 21, 21, 0) 100%);
+	background-image: url('../../../assets/images/services/4.jpg');
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	z-index: 0;
+}
+.service-details-banner::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	background: linear-gradient(90deg, #151515 0%, rgba(21, 21, 21, 0) 100%);
+	z-index: -1;
+}
+.service-details-banner h1 {
+	font-size: clamp(36px, 4.5vw, 54px);
+	line-height: 1.2;
+	color: white;
+	z-index: 2;
+	padding: 120px 0 0 100px;
+}
+.breadcrumb {
+	background: #ff3811;
+	width: fit-content;
+	height: 50px;
+	font-size: 20px;
+	line-height: 24px;
+	padding: 13px 45px;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	left: 38%;
+	clip-path: polygon(12% 0%, 88% 0, 100% 100%, 0% 100%);
+}
+
+.service-details-info-container {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-column-gap: 25px;
+	padding-top: 120px;
+}
+.service-details-info img {
+	border-radius: 10px;
+	width: 100%;
+	height: 400px;
+}
+
+.service-details-info .title {
+	font-weight: 700;
+	font-size: clamp(20px, 2.5vw, 35px);
+	line-height: clamp(24px, 3vw, 42px);
+   margin-top: 50px;
+}
