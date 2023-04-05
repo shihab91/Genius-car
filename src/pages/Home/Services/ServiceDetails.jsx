@@ -5,10 +5,12 @@ import { AiOutlineArrowRight, AiOutlineFilePdf } from 'react-icons/ai'
 import ScrollToTop from '../../shared/ScrollToTop/ScrollToTop'
 import useUserNavigate from '../../../hooks/useUserNavigate'
 import useServices from '../../../hooks/useServices'
+import logo from '../../../assets/footer-logo.svg'
 const ServiceDetails = () => {
-	const { img, title, description, facility } = useLoaderData()
+	const { img, title, description, facility, price } = useLoaderData()
 	const location = useLocation()
 	const otherServices = location.state?.titles
+	console.log(otherServices)
 	const services = useServices()
 	const handleNavigate = useUserNavigate(services)
 	const steps = [
@@ -42,7 +44,9 @@ const ServiceDetails = () => {
 					</div>
 					<div className='service-details-info-container'>
 						<div className='service-details-info'>
-							<img src={img} alt='' />
+							<div className='service-img'>
+								<img src={img} alt='' />
+							</div>
 							<h1 className='title'>{title}</h1>
 							<p className='description'>{description}</p>
 							<div className='facilities'>
@@ -80,10 +84,10 @@ const ServiceDetails = () => {
 							<div className='other-services'>
 								<h1>Services</h1>
 								<div className='services'>
-									{otherServices.map((service, index) => (
+									{otherServices.map(service => (
 										<div
+											key={service.id}
 											className='service'
-											key={index}
 											onClick={() => {
 												handleNavigate(service.id)
 											}}>
@@ -97,7 +101,7 @@ const ServiceDetails = () => {
 								<h2>Download</h2>
 								<div className='download-items'>
 									{downloadItems.map(item => (
-										<div className='item'>
+										<div className='item' key={item.id}>
 											<div className='pdf-info'>
 												<AiOutlineFilePdf />
 												<div>
@@ -111,6 +115,23 @@ const ServiceDetails = () => {
 										</div>
 									))}
 								</div>
+							</div>
+							<div className='pricing'>
+								<div className='pricing-info'>
+									<img src={logo} alt='' />
+									<h2>Need Help? We Are Here To Help You</h2>
+									<div className='discount'>
+										<h2>
+											<span>Car Doctor</span> Special
+										</h2>
+										<p>
+											Save up to <span>60% off</span>
+										</p>
+									</div>
+									<button className='btn-fill-orange'>Get A Quote</button>
+								</div>
+								<h1>price $ {price}</h1>
+								<button className='btn-fill-orange'>Proceed Checkout</button>
 							</div>
 						</div>
 					</div>

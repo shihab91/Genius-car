@@ -1,10 +1,8 @@
 import React from 'react'
 import { AiOutlineArrowRight } from 'react-icons/ai'
-import { useNavigate } from 'react-router-dom'
 import useUserNavigate from '../../../hooks/useUserNavigate'
 
 const ServiceCard = ({ service, services }) => {
-	const navigate = useNavigate()
 	const { title, price, img, _id } = service
 	const handleNavigate = useUserNavigate(services)
 	return (
