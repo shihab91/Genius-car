@@ -109,18 +109,18 @@
 .steps {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-   margin-bottom: 130px;
+	margin-bottom: 130px;
 }
 .step {
 	width: 235px;
 	height: 277px;
 	border: 1px solid #e8e8e8;
 	border-radius: 10px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   gap: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
 }
 .step .number {
 	background: rgba(255, 56, 17, 0.1);
@@ -142,4 +142,53 @@
 	font-size: 20px;
 	line-height: 55px;
 	margin: 0;
+}
+
+.other-services {
+	padding: 40px;
+	background: #f3f3f3;
+	border-radius: 10px;
+	height: 490px;
+}
+
+.other-services h1 {
+	font-weight: 700;
+	font-size: 25px;
+	line-height: 30px;
+}
+.other-services .services {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin-top: 20px;
+}
+.other-services .services .service {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #ffffff;
+	border-radius: 5px;
+	padding: 16px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+.other-services .services .service p {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+	color: #151515;
+}
+.other-services .services .service svg {
+	color: #ff3811;
+	width: 24px;
+	height: 24px;
+}
+.other-services .services .service:hover p {
+	color: white;
+}
+.other-services .services .service:hover {
+	background: #ff3811;
+}
+.other-services .services .service:hover svg {
+	color: white;
 }
