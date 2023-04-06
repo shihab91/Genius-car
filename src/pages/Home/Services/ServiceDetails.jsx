@@ -1,16 +1,17 @@
 import React from 'react'
-import { useLoaderData, useLocation } from 'react-router-dom'
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom'
 import './ServiceDetails.css'
 import { AiOutlineArrowRight, AiOutlineFilePdf } from 'react-icons/ai'
 import ScrollToTop from '../../shared/ScrollToTop/ScrollToTop'
 import useUserNavigate from '../../../hooks/useUserNavigate'
 import useServices from '../../../hooks/useServices'
 import logo from '../../../assets/footer-logo.svg'
+import PageBanner from '../../shared/PageBanner/PageBanner'
 const ServiceDetails = () => {
-	const { img, title, description, facility, price } = useLoaderData()
+	const { img, title, description, facility, price, _id } = useLoaderData()
 	const location = useLocation()
 	const otherServices = location.state?.titles
-	console.log(otherServices)
+	const navigate = useNavigate()
 	const services = useServices()
 	const handleNavigate = useUserNavigate(services)
 	const steps = [
@@ -38,10 +39,7 @@ const ServiceDetails = () => {
 		<ScrollToTop>
 			<div className='service-details-wrapper'>
 				<div className='container'>
-					<div className='service-details-banner'>
-						<h1>Service Details</h1>
-						<div className='breadcrumb'>Home / Service Details</div>
-					</div>
+					<PageBanner title='Service Details' />
 					<div className='service-details-info-container'>
 						<div className='service-details-info'>
 							<div className='service-img'>
@@ -131,7 +129,9 @@ const ServiceDetails = () => {
 									<button className='btn-fill-orange'>Get A Quote</button>
 								</div>
 								<h1>price $ {price}</h1>
-								<button className='btn-fill-orange'>Proceed Checkout</button>
+								<button className='btn-fill-orange' onClick={() => navigate(`/checkout/${_id}`)}>
+									Proceed Checkout
+								</button>
 							</div>
 						</div>
 					</div>
