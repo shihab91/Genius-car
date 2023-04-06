@@ -3,10 +3,11 @@ import img from '../../assets/images/login/login.svg'
 import facebook from '../../assets/icons/facebook.png'
 import linkedIn from '../../assets/icons/linkedin.png'
 import google from '../../assets/icons/google.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider'
 const SignUp = () => {
 	const { createUser, user } = useContext(AuthContext)
+	const navigate = useNavigate()
 	const handleSignUp = e => {
 		e.preventDefault()
 		const form = e.target
@@ -15,11 +16,10 @@ const SignUp = () => {
 		const password = form.password.value
 		createUser(email, password)
 			.then(result => {
-				console.log(result.user)
 				form.reset()
+				navigate('/')
 			})
 			.catch(err => console.log(err.message))
-		console.log(user)
 	}
 	return (
 		<div className='auth-wrapper'>

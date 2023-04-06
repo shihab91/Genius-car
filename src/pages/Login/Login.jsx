@@ -4,10 +4,11 @@ import './Login.css'
 import facebook from '../../assets/icons/facebook.png'
 import linkedIn from '../../assets/icons/linkedin.png'
 import google from '../../assets/icons/google.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider'
 const Login = () => {
 	const { user, signIn } = useContext(AuthContext)
+	const navigate = useNavigate()
 	const handleLogin = e => {
 		e.preventDefault()
 		const form = e.target
@@ -15,8 +16,8 @@ const Login = () => {
 		const password = form.password.value
 		signIn(email, password)
 			.then(result => {
-				console.log(result.user)
 				form.reset()
+				navigate('/')
 			})
 			.catch(err => console.log(err.message))
 	}

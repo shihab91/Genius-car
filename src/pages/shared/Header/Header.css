@@ -9,6 +9,9 @@ header {
 	padding: 15px 0;
 	position: relative;
 }
+.logo {
+	cursor: pointer;
+}
 .logo img {
 	width: 100px;
 	height: 80px;
@@ -25,12 +28,14 @@ header {
 .header-links ul li {
 	display: inline-block;
 	margin-left: 30px;
+	cursor: pointer;
 }
 .header-links ul li a {
 	color: black;
 	text-decoration: none;
 }
-.header-links ul li a:hover {
+.header-links ul li a:hover,
+.header-links ul li p:hover {
 	color: #ff3811;
 	text-decoration: underline;
 }
@@ -119,7 +124,8 @@ header {
 		flex-basis: 100%;
 		margin: 0;
 	}
-	.header-links ul li a {
+	.header-links ul li a,
+	.header-links ul li p {
 		color: white;
 		line-height: 40px;
 	}
