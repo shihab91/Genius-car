@@ -23,7 +23,15 @@ body {
 	min-width: 320px;
 	min-height: 100vh;
 }
-
+/*  to hide controls in input type number */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type='number'] {
+	-moz-appearance: textfield;
+}
 button {
 	border-radius: 5px;
 	border: 1px solid transparent;

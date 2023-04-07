@@ -1,0 +1,59 @@
+.orders-wrapper{
+   margin-top: 70px;
+   margin-bottom: 70px;
+}
+.orders{
+   margin-top: 110px;
+   margin-bottom: 80px;
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+}
+.order{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.order-img-name{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 30px;
+}
+.order-img-name svg{
+   width: 40px;
+   height: 40px;
+   padding: 10px;
+   border-radius: 50%;
+   background: #444444;
+   color: white;
+   cursor: pointer;
+}
+button:disabled{
+   filter: grayscale(0.1);
+}
+.order-img-name img {
+   width: 150px;
+   height: 150px;
+   border-radius: 10px;
+}
+.pending{
+   padding: 9px 20px;
+   background-color: #FF3811;
+   border-radius: 10px;
+   color: white;
+}
+.others{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.others button{
+display: flex;
+align-items: center;
+gap: 15px;
+font-weight: normal;
+background-color: #C1FCFF;
+border-radius: 50px;
+
+}

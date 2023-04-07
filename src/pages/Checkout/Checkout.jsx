@@ -6,7 +6,7 @@ import './Checkout.css'
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider'
 import { Toaster, toast } from 'react-hot-toast'
 const Checkout = () => {
-	const { _id, price, title } = useLoaderData()
+	const { _id, price, title, img } = useLoaderData()
 	const { user } = useContext(AuthContext)
 	const handlePlaceOrder = e => {
 		e.preventDefault()
@@ -15,14 +15,17 @@ const Checkout = () => {
 		const phone = form.phone.value
 		const email = form.email.value || 'unregistered'
 		const message = form.message.value
+		const date = new Intl.DateTimeFormat('en', { day: '2-digit', month: '2-digit', year: 'numeric' }).format(new Date()).replace(/\//g, '-')
 		const order = {
 			service: _id,
 			serviceName: title,
 			price,
+			img,
 			customer: name,
 			email,
 			phone,
 			message,
+			date
 		}
 		if (phone.length < 10) {
 			alert('phone numbers should be 10 characters or longer')
@@ -44,6 +47,9 @@ const Checkout = () => {
 				.catch(er => console.log(er.message))
 		}
 	}
+
+
+	
 	return (
 		<ScrollToTop>
 			<Toaster position='top-center' reverseOrder={false} />
